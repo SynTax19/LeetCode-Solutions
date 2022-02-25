@@ -11,6 +11,6 @@ public:
             m2= max(m2,m1);
             
         }
-        return max(m2,m3);
+        return m2;
     }
 };
