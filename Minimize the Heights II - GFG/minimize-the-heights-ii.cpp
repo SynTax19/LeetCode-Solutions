@@ -12,18 +12,22 @@ class Solution {
     int getMinDiff(int arr[], int n, int k) {
         
         sort(arr,arr+n);
-        int d = arr[n-1] - arr[0];
-        
-        int l = arr[0] , h=arr[n-1];
-        int m1,m2;
-        for(int i=1;i<n;i++){
-            if (arr[i]-k<0) continue;
-            
-            l = min (arr[0]+k , arr[i]-k);
-            h = max (arr[n-1]-k,arr[i-1]+k);
-            d = min (d , h-l);
-        }
-        return d;
+       int diff=arr[n-1]-arr[0];
+       
+       int l,h,mini,maxi;
+       l = arr[0]+k;
+       h = arr[n-1]-k;
+       
+       for(int i=0;i<n-1;i++){
+           mini=min(arr[i+1]-k,l);
+           maxi=max(arr[i]+k,h);
+           
+           if(mini<0)
+               continue;
+           else 
+               diff=min(diff,maxi-mini);
+       }
+       return diff;
     }
 };
 
