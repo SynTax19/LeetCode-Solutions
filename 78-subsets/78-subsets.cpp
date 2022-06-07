@@ -1,16 +1,16 @@
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> res;
+        vector<vector<int>> r;
         int n = (1<<nums.size());
         for (int i=0;i<n;i++){
-              vector <int> temp;
+              vector <int> t;
             for (int j=0;j<nums.size();j++){
-               if ( 1<<j & i ){ temp.push_back(nums[j]); }
+               if ( 1<<j & i ){ t.push_back(nums[j]); }
                 
             }
-            res.push_back(temp);
+            r.push_back(t);
         }
-        return res;
+        return r;
     }
 };
