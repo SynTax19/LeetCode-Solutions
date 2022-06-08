@@ -11,9 +11,10 @@ public:
             
             
             if ( av == 0 && bv == 0 && cv == 1 ) res++;
-            else if (av == 1 && bv == 1 && cv == 0) res+=2; 
+          
             else if (cv == 0){
-                if (av == 1 || bv == 1) { res++; }
+                if (av == 1 && bv == 1 ){ res+=2; }
+                else if (av == 1 || bv == 1) { res++; }
             }       
         }
         return res; 
