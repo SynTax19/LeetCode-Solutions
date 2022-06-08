@@ -10,8 +10,8 @@ class Solution {
        if (N==0) return -1;
        while(N){
            i++; 
-           if (N%2 == 0){ s+="0"; }
-           else { s+= "1" , c++; pos=i; }
+           if (N%2 == 1){  c++; pos=i;}
+           
            
            N/=2;
        }
