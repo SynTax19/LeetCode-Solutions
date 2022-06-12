@@ -14,6 +14,8 @@ public:
         
         ListNode *dummy = new ListNode(0);
         ListNode *res = dummy;
+        if (l1 == NULL) return l2;
+        if (l2 == NULL) return l1;
         
         while (l1!= NULL && l2!=NULL){
             
