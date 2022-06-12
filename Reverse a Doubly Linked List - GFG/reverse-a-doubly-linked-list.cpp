@@ -100,15 +100,15 @@ struct Node
 */
 Node* reverseDLL(Node * head)
 {
-    while(head!=NULL){
-         Node *pre = head->next;
-        head-> next = head->prev;
-        head-> prev = pre;
-        if ( pre == NULL ) return head;
-        
-        head = pre;
+   auto node = head;
+    while(1){
+        swap(node->prev, node->next);
+        if(node->prev != NULL)
+            node = node->prev;
+        else
+            return node;
     }
-    return head;
+    return 0;
 }
 
 
