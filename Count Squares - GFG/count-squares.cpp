@@ -9,10 +9,30 @@ class Solution {
         
         int n = sqrt(N) , c=0;
         
-        for (int i=1;i<=n;i++){
-            if (i*i < N) c++;
+        // for (int i=1;i<=n;i++){
+        //     if (i*i < N) c++;
+        // }
+        // return c;
+        
+        int l=1 , h=N;
+        while(l<=h){
+            long long  mid = (l+(h-l)/2);
+            
+            if (mid*mid < N){
+                c=mid;
+                l = mid+1;
+            }
+            else 
+                h = mid-1;
+                
+            // cout<<c<<" ";        
         }
+        
         return c;
+        
+        
+        
+        
     }
 };
 
