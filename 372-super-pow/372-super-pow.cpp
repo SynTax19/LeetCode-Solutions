@@ -4,7 +4,8 @@ public:
     int power (int x , int y){
         
         int mod = 1337 , res=1;
-        for (int i=0;i<y;i++){  res = ((res%mod)*(x%mod))%mod;  }
+        x%=mod;
+        for (int i=0;i<y;i++){  res = ((res%mod)*x)%mod;  }
         
         return res;   
         
