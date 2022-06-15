@@ -12,11 +12,23 @@ class Solution
     {
         int prev[n+1]={0};
         
-        prev [0]=0 , prev[1]=arr[1-1];
+        prev [0]=arr[0] ;
         
-        for (int i=2;i<n+1;i++) { prev[i] = max( prev[i-1], prev[i-2]+arr[i-1]);    }
+        // for (int i=2;i<n+1;i++) { prev[i] = max( prev[i-1], prev[i-2]+arr[i-1]);    }
         
-        return prev[n];
+        for (int i=1;i<n;i++){
+            int t = -1 , nt = -1;
+            if (i>1) t = arr[i]+prev[i-2];
+            else  t = arr[i];
+            
+            nt = prev[i-1];
+            
+            prev[i] = max(t,nt);
+        }
+        
+        
+        
+        return prev[n-1];
     }
 };
 
