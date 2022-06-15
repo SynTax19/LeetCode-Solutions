@@ -11,12 +11,12 @@ public:
             
             if (nums[l] <= nums[mid]){
                
-                if (k < nums[mid] && k >=nums[l])   h=mid-1;
+                if (k <= nums[mid] && k >=nums[l])   h=mid-1;
                 else   l=mid+1;      
                 
             }else {
                 
-                if (k <= nums[h] && k>nums[mid])   l=mid+1; 
+                if (k <= nums[h] && k>=nums[mid])   l=mid+1; 
                 else   h=mid-1;  
                 
             }   
