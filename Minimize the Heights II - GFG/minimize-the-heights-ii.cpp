@@ -17,14 +17,16 @@ class Solution {
        int l,h,mini,maxi;
        l = arr[0]+k;
        h = arr[n-1]-k;
+       // 1. Checking First and Last 
+       // 2. Now, Present ko Increse crow and nxt ko decrease and find min difference.
        
        for(int i=0;i<n-1;i++){
            mini=min(arr[i+1]-k,l);
            maxi=max(arr[i]+k,h);
            
-           if(mini<0)
-               continue;
-           else 
+          if(mini<0)
+              continue;
+          else 
                diff=min(diff,maxi-mini);
        }
        return diff;
